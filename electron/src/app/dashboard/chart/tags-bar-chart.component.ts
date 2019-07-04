@@ -92,7 +92,7 @@ export class TagsBarChartComponent implements OnInit, OnChanges {
                 },
                 yAxis: {
                     tickFormat: function (d) {
-                        return d + "€";
+                        return d + "$";
                     }
                 },
                 useInteractiveGuideline: true,
@@ -109,9 +109,9 @@ export class TagsBarChartComponent implements OnInit, OnChanges {
 
                             d.series.forEach(s => {
                                 if (s.value > 0) {
-                                    operations += `<li class="list-group-item"><span class="tag" style="background-color: ${s.color}">${s.key} (${s.value}€)</span></li>`;
+                                    operations += `<li class="list-group-item"><span class="tag" style="background-color: ${s.color}">${s.key} (${s.value}$)</span></li>`;
                                     s.data.operations.forEach(o => {
-                                        operations += `<li class="list-group-item">${o.getTitle()} <span class="tag tag-${o.getPriceColor()}">${o.price}€</span></li>`;
+                                        operations += `<li class="list-group-item">${o.getTitle()} <span class="tag tag-${o.getPriceColor()}">${o.price}$</span></li>`;
                                     });
                                     total += s.value;
                                 }
@@ -124,7 +124,7 @@ export class TagsBarChartComponent implements OnInit, OnChanges {
                             return `
                                 <div class="card text-xs-center">
                                     <div class="card-header">
-                                        <b>${date} - ${total}€</b>
+                                        <b>${date} - ${total}$</b>
                                     </div>
                                     <ul class="list-group list-group-flush">
                                         ${operations}

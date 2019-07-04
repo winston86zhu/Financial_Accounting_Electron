@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
 
     dateStart: string = '';
     dateEnd: string = '';
-    initialAccountBalance: number = 2977.28;
+    initialAccountBalance: number = 0;
 
     constructor(private operationService: OperationService,
         private accountService: AccountService,

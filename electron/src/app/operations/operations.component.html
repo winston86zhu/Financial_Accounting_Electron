@@ -9,8 +9,8 @@
 
     <div class="col-md-3">
         <ul class="list-group">
-            <button type="button" class="list-group-item list-group-item-action list-group-item-warning" (click)="operationDetailAdd.openModal()">Add a new manual operation</button>
-            <button type="button" class="list-group-item list-group-item-action list-group-item-success" [routerLink]="['/operations/import/file', 'ca-txt-fr']">Import file CA TXT</button>
+            <button type="button" class="list-group-item list-group-item-action list-group-item-warning" (click)="operationDetailAdd.openModal()">Insert new Transaction</button>
+            <button type="button" class="list-group-item list-group-item-action list-group-item-success" [routerLink]="['/operations/import/file', 'ca-txt-fr']">Import Transcation Logs</button>
         </ul>
     </div>
     <my-operation-detail [saveDB]="true" (onOperationUpdate)="onOperationUpdate(null, $event)" [addOnly]="true" #operationDetailAdd></my-operation-detail>

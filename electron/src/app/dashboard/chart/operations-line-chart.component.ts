@@ -78,7 +78,7 @@ export class OperationsLineChartComponent implements OnInit, OnChanges {
             if (today >= start_date && today <= end_date) {
                 var today_str = today.toISOString().substr(0, 10);
                 today_line = {
-                    key: "Today",
+                    key: "Single Transaction",
                     color: "#E74C3C",
                     values: [
                         { date: today_str, value: min_value + 10 },
@@ -89,7 +89,7 @@ export class OperationsLineChartComponent implements OnInit, OnChanges {
         }
         var data = [
             {
-                key: "Operations",
+                key: "Trend",
                 area: true,
                 values: values
             },
@@ -119,7 +119,7 @@ export class OperationsLineChartComponent implements OnInit, OnChanges {
                 },
                 yAxis: {
                     tickFormat: function (d) {
-                        return d + "€";
+                        return d + "$";
                     }
                 },
                 useInteractiveGuideline: true,
@@ -140,14 +140,14 @@ export class OperationsLineChartComponent implements OnInit, OnChanges {
                             if (serie_operations) {
                                 var operations_list = '';
                                 serie_operations.data.operations.forEach(o => {
-                                    operations_list += `<li class="list-group-item">${o.getTitle()} <span class="tag tag-${o.getPriceColor()}">${o.price}€</span></li>`;
+                                    operations_list += `<li class="list-group-item">${o.getTitle()} <span class="tag tag-${o.getPriceColor()}">${o.price}$</span></li>`;
                                 });
                                 if (operations_list.length == 0) {
                                     operations_list = `<li class="list-group-item"><i>No operation this day</i></li>`;
                                 }
                                 operations = `
                                     <div class="card-header">
-                                        <b>${date} - ${serie_operations.data.value}€</b>
+                                        <b>${date} - ${serie_operations.data.value}$</b>
                                     </div>
                                     <ul class="list-group list-group-flush">
                                         ${operations_list}
@@ -158,13 +158,13 @@ export class OperationsLineChartComponent implements OnInit, OnChanges {
                                 if (serie_operations) {
                                     average = `
                                         <div class="card-footer">
-                                            <small><b>Average:</b> ${serie_average.data.value}€</small>
+                                            <small><b>Average:</b> ${serie_average.data.value}$</small>
                                         </div>
                                     `;
                                 } else {
                                     average = `
                                         <div class="card-header">
-                                            <b>${date} - ${serie_average.data.value}€</b>
+                                            <b>${date} - ${serie_average.data.value}$</b>
                                         </div>
                                     `;
                                 }

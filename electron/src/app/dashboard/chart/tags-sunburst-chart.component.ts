@@ -80,7 +80,7 @@ export class TagsSunburstChartComponent implements OnInit, OnChanges {
                             <div class="card text-xs-center">
                                 <p class="card-text">
                                     ${title}
-                                    <span class="tag" style="background-color: ${color}">${value}€</span>
+                                    <span class="tag" style="background-color: ${color}">${value}$</span>
                                 </p>
                             </div>
                         `;
